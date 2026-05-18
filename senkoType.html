@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>senkotype</title>
+<link rel="stylesheet" href="senkotype.css" />
+</head>
+<body>
+
+<div class="layout">
+
+    <!-- LEFT -->
+    <div class="left-column">
+        <div class="score-container">
+            <div class="score-label">Timer</div>
+            <div class="score" id="timer">0</div>
+        </div>
+
+        <div class="stat-group">
+            <div class="stat-row">Best Streak <span id="bestStreak">0</span></div>
+            <div class="stat-row">High Score <span id="highScore">0</span></div>
+            <div class="stat-row hint">ESC to reset</div>
+        </div>
+
+        <!-- MODE -->
+        <div class="section-block">
+            <div class="section-label">Mode</div>
+            <div class="mode-buttons">
+                <button class="mode-btn active" data-mode="words">Words</button>
+                <button class="mode-btn" data-mode="sequence">Sequence</button>
+                <button class="mode-btn" data-mode="text">Text</button>
+            </div>
+            <div id="mode-settings-area"></div>
+        </div>
+
+        <!-- DISPLAY -->
+        <div class="section-block">
+            <div class="section-label">Display</div>
+            <label class="mode-check">
+                <input type="checkbox" id="finger-colors-global" checked>
+                Finger Colors
+            </label>
+        </div>
+
+        <!-- TIMING -->
+        <div class="section-block">
+            <div class="section-label">Speed</div>
+            <label class="mode-check" style="margin-bottom:4px">
+                <input type="checkbox" id="timed-mode-toggle">
+                Time Pressure
+            </label>
+            <div class="preset-buttons">
+                <button class="preset-btn" data-preset="easy">Easy</button>
+                <button class="preset-btn active" data-preset="normal">Normal</button>
+                <button class="preset-btn" data-preset="hard">Hard</button>
+                <button class="preset-btn" data-preset="turbo">Turbo</button>
+            </div>
+            <label class="ctrl-label">ms/letter
+                <input type="number" id="ms-per-letter-input" class="ctrl-input"
+                    min="50" max="5000" step="50" value="1000">
+            </label>
+        </div>
+
+        <div class="legend-box" id="legendBox"></div>
+    </div>
+
+    <!-- CENTER -->
+    <div class="center-column">
+        <div class="character-panel">
+            <img id="characterImg" class="character-img" src="Pictures/senko/idle.png" alt="Senko" />
+        </div>
+
+        <div class="message-box" id="messageBox"></div>
+
+        <input type="text" class="game-input" id="gameInput" autocomplete="off" />
+    </div>
+
+    <!-- RIGHT -->
+    <div class="right-column">
+
+        <div class="score-container">
+            <div class="score-label">Score</div>
+            <div class="score" id="score">0</div>
+        </div>
+
+        <div class="stats-panel">
+            <div class="section-label">Session</div>
+            <div class="stat-row">Letters   <span id="stat-letters">0</span></div>
+            <div class="stat-row">Words     <span id="stat-words">0</span></div>
+            <div class="stat-row">Sequences <span id="stat-sequences">0</span></div>
+            <div class="stat-row">Mistakes  <span id="stat-mistakes">0</span></div>
+            <div class="stat-row">Breaks    <span id="stat-broken">0</span></div>
+            <div class="stat-row">Word Streak <span id="wordSeqCount">0</span></div>
+            <div class="stat-row">Seq Streak <span id="seqCount">0</span></div>
+        </div>
+    </div>
+
+</div>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
