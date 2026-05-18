@@ -38,15 +38,6 @@ export const wordsMode = {
         const currentPreset = timingState.preset || 'normal';
         container.innerHTML = `
             <div class="mode-setting">
-                <div class="section-label" style="margin-bottom:4px">Difficulty</div>
-                <div class="preset-buttons">
-                    <button class="preset-btn words-diff-btn${currentPreset === 'easy'   ? ' active' : ''}" data-preset="easy">Easy</button>
-                    <button class="preset-btn words-diff-btn${currentPreset === 'normal' ? ' active' : ''}" data-preset="normal">Normal</button>
-                    <button class="preset-btn words-diff-btn${currentPreset === 'hard'   ? ' active' : ''}" data-preset="hard">Hard</button>
-                    <button class="preset-btn words-diff-btn${currentPreset === 'turbo'  ? ' active' : ''}" data-preset="turbo">Turbo</button>
-                </div>
-            </div>
-            <div class="mode-setting">
                 <div class="section-label" style="margin-bottom:4px">Word Count</div>
                 <div class="preset-buttons">
                     <button class="preset-btn count-btn${modeState.wordCount === 10    ? ' active' : ''}" data-count="10">10</button>
